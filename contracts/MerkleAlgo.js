@@ -1,11 +1,11 @@
 const { MerkleTree } = require("merkletreejs");
 const keccak256 = require("keccak256");
-const tokens = require("./tokens.json");
+const adresses = require("./adresses.json");
 
 async function main() {
   let tab = [];
-  tokens.map((token) => {
-    tab.push(token.address);
+  adresses.map((addresses) => {
+    tab.push(adresses.address);
   });
   const leaves = tab.map((address) => keccak256(address));
   const tree = new MerkleTree(leaves, keccak256, { sort: true });
