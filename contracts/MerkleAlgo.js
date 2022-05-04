@@ -1,6 +1,6 @@
 const { MerkleTree } = require("merkletreejs");
 const keccak256 = require("keccak256");
-const adresses = require("./adresses.json");
+const adresses = require("./MerkleAdresses.json");
 
 async function main() {
   let tab = [];
