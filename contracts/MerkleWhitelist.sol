@@ -12,6 +12,10 @@ contract MerkleWhitelist {
         merkleRoot = _merkleRoot;
     }
 
+   function setMerkleRoot(bytes32 _merkleRoot) public  {
+        merkleRoot = _merkleRoot;
+    }
+
     function isWhiteListed(address _account, bytes32[] calldata _proof) internal view returns(bool) {
         return _verify(leaf(_account), _proof);
     }
